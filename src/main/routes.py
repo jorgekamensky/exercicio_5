@@ -1,3 +1,4 @@
+from typing import Dict
 from flask import Blueprint, request, jsonify
 user_routes_bp = Blueprint("api_routes", __name__)
 
@@ -9,7 +10,6 @@ from src.main.composer.get_user_composer import get_user_composer
 @user_routes_bp.route("/post", methods=["POST"])
 def post_user():
     post_user_view = post_user_composer()
-    
     http_request = request_adapter(request)
     http_response = post_user_view.handle(http_request)
 

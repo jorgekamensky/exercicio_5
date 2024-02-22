@@ -5,14 +5,13 @@ from src.models.repo import UserRepo
 
 class PostUserController(PostUserInterface):
 
-    # def __init__(self, user_repo: UserRepo):
-    #     self.user_repo = user_repo
+    def __init__(self, user_repo: UserRepo):
+        self.user_repo = user_repo
 
-    def save_user(self, input_user: Dict):
+    def insert_user(self, input_user: Dict):
         try:
-            user = User(**input_user) # unpacking o dict
-            user_repo = UserRepo()
-            user_repo.post_user(user)
-            return {"msg": "User registered", "content": input_user}
+            user = User(**input_user)
+            self.user_repo.post_user(user)
+            return user
         except Exception as e:
-            return (print(f"Error creating user: {e}"))
+            print(f"Error: {e}")

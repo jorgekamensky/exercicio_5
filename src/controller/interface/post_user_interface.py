@@ -4,5 +4,5 @@ from typing import Dict
 class PostUserInterface(ABC):
 
     @abstractmethod
-    def save_user(self, user_input: Dict) -> Dict:
+    def insert_user(self, user_input: Dict) -> Dict:
         pass

@@ -13,7 +13,7 @@ class PostUserView(ViewInterface):
             first_name = body["first_name"]
             second_name = body["second_name"]
             elements = {"first_name": first_name, "second_name": second_name}
-            response = self.__controller.save_user(elements)
+            response = self.__controller.insert_user(elements)
             return HttpResponse(status_code=200, body={ "response": response })
         except Exception as exception:
             return HttpResponse(status_code=500, body={ "error": str(exception) })
