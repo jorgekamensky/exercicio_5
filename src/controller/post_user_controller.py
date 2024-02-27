@@ -1,7 +1,8 @@
 from typing import Dict
 from .interface.post_user_interface import PostUserInterface
 from src.models.user_model import User
-from src.models.repo import UserRepo
+## from src.models.repo import UserRepo ## replace for an interface??
+from src.models.interface.repo_interface import RepoInterface as UserRepo
 
 class PostUserController(PostUserInterface):
 

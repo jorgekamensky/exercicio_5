@@ -1,7 +1,8 @@
 from .user_model import User
 from src.database.db_config import connect_db
+from .interface.repo_interface import RepoInterface
 
-class UserRepo:
+class UserRepo(RepoInterface):
     def __init__(self):
         self.db_connection = connect_db()
     
